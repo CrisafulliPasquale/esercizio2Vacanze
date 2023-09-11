@@ -48,11 +48,11 @@ public class Cliente {
     }
 
     public void setNazione(String nazione) {
-        this.nazione = nazione;
+        this.nazioneNascita = nazione;
     }
 
     public void setCitta(String citta) {
-        this.citta = citta;
+        this.cittaNascita = citta;
     }
 
     public void setDataNascita(String dataNascita) {
@@ -60,7 +60,7 @@ public class Cliente {
     }
 
     public void setCodice(String codice) {
-        this.codice = codice;
+        this.codiceCliente = codice;
     }
     
     private String generaCodiceCliente() {
