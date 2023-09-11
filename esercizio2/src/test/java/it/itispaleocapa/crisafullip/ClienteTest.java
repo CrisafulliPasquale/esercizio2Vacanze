@@ -59,7 +59,7 @@ public class ClienteTest {
     // secondi test
     @Test
     public void testAggiungiCliente() {
-        Cliente cliente3 = new Cliente("COD3", "Maurizio", "Crisafulli");
+        Cliente cliente3 = new Cliente("Crisafulli", "Maurizio", "Italia","Milazzo","1981-10-09");
         contClienti.aggiungiCliente(cliente3);
         assertTrue(contClienti.cercaClientiPerParametri("Crisafulli", "Maurizio").contains(cliente3));
     }
