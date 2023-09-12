@@ -2,7 +2,7 @@ package it.itispaleocapa.crisafullip;
 
 public class Main {
     public static void main(String[] args) {
-        Cliente cliente = new Cliente("Labollita", "Samuele", "Italia", "Bergamo", "11/03/2005", "C001");
+        Cliente cliente = new Cliente("Crisafulli", "Pasquale", "Italia", "Milazzo", "25/08/2005", "C001");
         Volo volo = new Volo("V001", "Bergamo", "Roma", "01/10/2023", "08:00", "10:00", 150, 120.0);
 
         cliente.setCognome("Loda");

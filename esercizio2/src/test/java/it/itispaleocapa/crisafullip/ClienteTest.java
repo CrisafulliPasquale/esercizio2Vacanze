@@ -3,10 +3,11 @@ package it.itispaleocapa.crisafullip;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.Test;
+
 
 public class ClienteTest {
     private Cliente cliente;
@@ -15,14 +16,14 @@ public class ClienteTest {
     private ContenitoreVoli contVoli;
     private Prenotazione prenotazione;
 
-    @Before
+    
     public void setUp() {
         // primi test
-        cliente = new Cliente("Crisafulli", "Pasquale", "Italia", "Milazzo", "2005-08-25");
+        cliente = new Cliente("Crisafulli", "Pasquale", "Italia", "Milazzo", "2005-08-25", "COD1");
         // secondi test
         contClienti = new ContenitoreClienti();
-        Cliente cliente1 = new Cliente("COD1", "Pasquale", "Crisafulli");
-        Cliente cliente2 = new Cliente("COD2", "Nicola", "Bresciani");
+        Cliente cliente1 = new Cliente("Bresciani", "Nicola", "Italia", "Bergamo", "2005-04-18", "COD2");
+        Cliente cliente2 = new Cliente("Labollita", "Samuele", "Italia", "Bergamo", "2005-03-11", "COD3");
         contClienti.aggiungiCliente(cliente1);
         contClienti.aggiungiCliente(cliente2);
         // terzi test
@@ -59,7 +60,7 @@ public class ClienteTest {
     // secondi test
     @Test
     public void testAggiungiCliente() {
-        Cliente cliente3 = new Cliente("Crisafulli", "Maurizio", "Italia","Milazzo","1981-10-09");
+        Cliente cliente3 = new Cliente("Crisafulli", "Maurizio", "Italia","Milazzo","1981-10-09","COD4");
         contClienti.aggiungiCliente(cliente3);
         assertTrue(contClienti.cercaClientiPerParametri("Crisafulli", "Maurizio").contains(cliente3));
     }
@@ -160,7 +161,7 @@ public class ClienteTest {
         Prenotazione prenotazioneDaRimuovere = new Prenotazione("COD2", "VOL2");
         prenotazione.aggiungiPrenotazione(prenotazioneDaRimuovere);
         prenotazione.rimuoviPrenotazioneCodiceClienteECodiceVolo("VOL2", "COD2");
-        assertFalse(prenotazione.prenotazioni.contains(prenotazioneDaRimuovere));
+        assertEquals(0, prenotazione.prenotazioni.contains(prenotazioneDaRimuovere));
     }
 
     @Test
