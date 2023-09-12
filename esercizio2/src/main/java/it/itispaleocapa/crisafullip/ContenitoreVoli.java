@@ -21,6 +21,10 @@ public class ContenitoreVoli {
         return voli.get(codiceVolo);
     }
 
+    public int size() {
+        return voli.size();
+    }
+    
     public List<Volo> cercaVoliPerParametri(String data, String aeroportoP, String aeroportoA, String oraP) {
         List<Volo> risultato = new ArrayList<>();
         for (Volo volo : voli.values()) {

@@ -15,6 +15,14 @@ public class Prenotazione {
         this.bagagli = new LinkedList<>();
     }
 
+    public LinkedList<Prenotazione> getPrenotazioni() {
+        return prenotazioni;
+    }
+
+    public void setPrenotazioni(LinkedList<Prenotazione> prenotazioni) {
+        this.prenotazioni = prenotazioni;
+    }
+
     public void aggiungiPrenotazione(Prenotazione prenotazione) {
         prenotazioni.add(prenotazione);
     }
